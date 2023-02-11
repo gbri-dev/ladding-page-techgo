@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./vendor/owl/css/owl.css">
+    <link rel="stylesheet" href="./vendor/fontawesome/fontawesome.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>jQuery</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <a class="navbar-brand" href="#">
+            <div class="logo"><img width="200px" src="assets/images/logo-md.png" alt="">
+            </div>
+        </a>
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Início
+                            <!-- <span class="sr-only">(Pág)</span> -->
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#featured">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobreNos">Sobre nós</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="sobreNos" class="banner">
+        <!-- <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="caption">
+                        <h2>TechGolinfo Onward</h2>
+                        <div class="line-dec"></div>
+                        <p>Hardware & Periféricos. </p>
+                        <p>Aqui você encontra tudo em um só lugar pra te levar pra uma nova esperiência tecnologica!</p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+    <div id="featured" class="featured-items">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <div class="line-dec"></div>
+                        <h1>Destaques</h1>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="owl-carousel owl-theme">
+                        <div class="featured-item">
+                            <img src="assets/images/AsusRogTufGamers.jpg" alt="Item 1">
+                            <h4>Asus Rog TUF b5500</h4>
+                            <h6>R$ 1600,00</h6>
+                            <button class="btn btn-secondary" type="button" onclick="comprarItem()">Comprar</button>
+                        </div>
+                        <div class="featured-item">
+                            <img src="assets/images/gamemax-infinity.jpg" alt="Item 2">
+                            <h4>Game-Max Infinity</h4>
+                            <h6>R$ 795,00</h6>
+                            <button class="btn btn-secondary" type="button" onclick="comprarItem()">Comprar</button>
+                        </div>
+                        <div class="featured-item">
+                            <img src="assets/images/RTX2070Sup.jpg" alt="Item 3">
+                            <h4>Geforce RTX2070 super 8GB</h4>
+                            <h6>R$ 3500,00</h6>
+                            <button class="btn btn-secondary" type="button" onclick="comprarItem()">Comprar</button>
+                        </div>
+                        <div class="featured-item">
+                            <img src="assets/images/Ryzen7-5700x.jpg" alt="Item 4">
+                            <h4>Ryzen 7 5700x eight-core</h4>
+                            <h6>R$ 1900,00</h6>
+                            <button class="btn btn-secondary" type="button" onclick="comprarItem()">Comprar</button>
+                        </div>
+                        <div class="featured-item">
+                            <img src="assets/images/water-cooler-superframe.jpg" alt="Item 5">
+                            <h4>Water Cooler Superframe ARGB</h4>
+                            <h6>R$ 800,00</h6>
+                            <button class="btn btn-secondary" type="button" onclick="comprarItem()">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="cadastro" class="cadastro">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6 col-sm-12">
+                    <h2>Receba novidades e ofertas incríveis!</h2>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="row g-3">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6 input-group-lg">
+                        <input type="text" class="form-control" name="nome" placeholder="ex: João" id="nomeInput">
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6 input-group-lg">
+                        <input type="text" class="form-control" name="Email" placeholder="Digite seu e-mail"
+                            id="emailInput" aria-describedby="inputGroup-sizing-lg">
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-lg btncadastro">Cadastrar-se</button>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="logo">
+                        <img src="assets/images/logo-md.png" alt="">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a href="#">Início</a></li>
+                            <li><a href="#">Ajuda</a></li>
+                            <li><a href="#">Termos de Privacidade </a></li>
+                            <li><a href="#">Como funciona?</a></li>
+                            <li><a href="#">Contato</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="social-icons">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sub-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="copyright-text">
+                        <p>TECHGOLINFO &copy; Todos os direitos reservados
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./vendor/jquery/jquery-3.6.0.min.js"></script>
+    <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./vendor/owl/js/owl.js"></script>
+    <script src="./js/custom.js"></script>
+</body>
+
+</html>
