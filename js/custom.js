@@ -54,6 +54,7 @@ $(document).ready(function () {
    //    .show(500, function () {
    //       alert($(this).find('h4').text() + ' Em estoque')
    //    })
+   $('comprarItem()').eventClick()
 })
 
 function comprarItem() {
