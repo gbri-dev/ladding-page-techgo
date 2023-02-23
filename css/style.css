@@ -327,14 +327,15 @@ a {
 	margin-bottom: -105px;
 }
 
+.navbar-brand .logo-rp {
+	position: static;
+	width: 150px;
+	margin: 15px;
+}
+
 @media(max-width: 600px) {
 	.logo img {
 		display: none;
-	}
-
-	.footer .logo img {
-		width: 150px;
-		margin: 0;
 	}
 }
 
