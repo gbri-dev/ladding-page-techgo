@@ -304,7 +304,7 @@ a {
 	border: none;
 }
 
-.btncadastro {
+#btnCadastrar {
 	color: white;
 	background-color: #4e396e;
 }

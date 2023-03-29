@@ -39,7 +39,7 @@
                         <a class="nav-link" href="#sobreNos">Sobre nós</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#cadastro">Contato</a>
+                        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#contato-modal">Contato</a>
                     </li>
                 </ul>
             </div>
@@ -259,8 +259,9 @@
             </div>
         </div>
     </div>
+
     <!-- INSCREVA-SE NA NOSSAS NEWSLETTERS-->
-    <section id="cadastro" class="cadastro">
+    <!-- <section id="cadastro" class="cadastro">
         <div class="container">
             <div class="row">
                 <div class="col-md-3"></div>
@@ -282,13 +283,55 @@
                     <div class="col-md-1"></div>
                     <div class="col-md-3"></div>
                     <div class="col-md-6">
-                        <button type="button" class="btn btn-lg btncadastro">Cadastrar-se</button>
+                        <button type="submit" class="btn btn-lg" id="btnCadastrar">Cadastrar-se</button>
                     </div>
                     <div class="col-md-1"></div>
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
+
+    <!-- Modal contate-nos -->
+    <div id="contato-modal" class="modal fade">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Contate-nos</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="col" id="form-contato">
+                        <form class="form px-4 py-3">
+                            <div class="mb-3">
+                                <label for="FormName" class="form-label">Primeiro Nome</label>
+                                <input type="text" class="form-control" name="nome" id="FormName" placeholder="Nome">
+                            </div>
+                            <div class="mb-3">
+                                <label for="FormEmail1" class="form-label">Email
+                                    Principal</label>
+                                <input type="email" class="form-control" id="FormEmail1" placeholder="email@example.com"
+                                    required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="FormCPF" class="form-label">CPF</label>
+                                <input type="text" class="form-control" id="FormCPF" name="nome"
+                                    placeholder="111.111.111-11">
+                            </div>
+                            <button type="submit" class="btn btn-lg btn-outline-primary">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer footer">
+                    <a href="https:/www.techgolinfo.com.br">TechGOL</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
 
     <!-- RODAPÉ -->
     <div class="footer">
@@ -335,6 +378,7 @@
             </div>
         </div>
     </div>
+
 
     <script src="./vendor/jquery/jquery-3.6.0.min.js"></script>
     <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>

@@ -4,21 +4,56 @@ $(document).ready(function () {
 
    $('.owl-carousel').owlCarousel();
 
-   // Configuração de produtos
+   // Ouvinte de eventos .nav-model-open
+   $('.nav-modal-open').on('click', function (e) {
+      e.preventDefault();
 
+      let elem = $(this).attr('rel')
+      $('.modal-body').html($('#' + elem).html())
+
+      $('.modal-header h5.modal-title').html($(this).text())
+
+      let myModal = new bootstrap.Modal($('#exampleModalToggle'))
+      myModal.show()
+   })
+
+   /* - Checar se o nome é válido (mais de 2 caracteres)
+    * - Checar se o email é válido com ao menos um @ e .
+    * - Checar se o CPF é válido com regex 
+    */
+   $('#FormName').on('focusout', function (e) {
+      e.preventDefault()
+      // let Campo = $('#FormName').val();
+      // validate(Campo)
+      let valorNome = $("#FormName").val()
+      if (valorNome == " " || valorNome.length <= 2) {
+         $(this).addClass('erroModal')
+      }
+      else {
+         // elem.parent().find('.text-muted').hide()
+         $(this).removeClass('erroModal')
+      }
+   })
+
+   //Válida CPF e CNPJ expressão regex: ([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})
+   $('#FormCPF').on('focusout', function (e) {
+      e.preventDefault()
+      const cpfValido = /[0-9]{3}\.[0-9]{3}\.[0-9]{3}\-[0-9]{2}/i;
+
+      if (this.value.match(cpfValido)) {
+         $(this).removeClass('erroModal')
+      }
+      else {
+         // elem.parent().find('.text-muted').hide()
+         $(this).addClass('erroModal')
+      }
+   })
+
+   /*          FIM  */
 
 
    $('.featured-item h4').append('<span class="badge bg-secondary">Novo</span>')
-   // $('.featured-item:first h4').start('<span class="badge bg-secondary">Novo</span>')
-   // $('.featured-item:first h4').html('<span class="badge bg-secondary">Novo</span>')
-   // $('.featured-item:first h4').addClass('active')
-   // $('.featured-item:first h4').removeClass('active')
-   // $('.featured-item:first h4').toggleClass('active')
-   // $('.featured-item:first h4').hide()
-   // $('.featured-item:first h4').show()
-   // $('.featured-item:first h4').fadeIn(2000)
-   // $('.featured-item:first h4').fadeOut()
-   //  $('.featured-item:first h4').css('color', '#f00')
+
 
    $('.featured-item h4').dblclick(function () {
       $(this).css({
@@ -27,35 +62,21 @@ $(document).ready(function () {
          'font-weight': '100',
          'padding': '15',
       });
-      // let titulo = $('.featured-item:first h4')
       $(this).append('Frete Gratis');
    });
-
-   $('#nomeInput').on('blur', function (event) {
-      event.preventDefault(); //vai tirar o comportamento padrão do link 'a'
-      // let Nome = this.value != null;
-      if (this.value == null) {
-         alert('Preencha o campo com o seu primeiro nome.')
-      }
-   })
-   $('#emailInput').on('blur', function (event) {
-      event.preventDefault(); //vai tirar o comportamento padrão do link 'a'
-      if (this.value == null)
-         alert('Preencha o campo com o seu e-mail principal!')
-   })
 
    $('.featured-item a').on('blur', function (event) {
       event.preventDefault(); //vai tirar o comportamento padrão do link 'a'
       $(this).addClass('btn btn-dark stretch-link');
    })
 
-   $(".cadastro .btncadastro").on('mouseenter', function (event) {
+   $(".cadastro #btnCadastrar").on('mouseenter', function (event) {
       event.preventDefault();
       var div = $(this);
       div.animate({ left: '100px' }, "fast");
       div.animate({ fontSize: '3em' }, "fast");
    })
-   $(".cadastro .btncadastro").on('mouseleave', function (event) {
+   $(".cadastro #btnCadastrar").on('mouseleave', function (event) {
       event.preventDefault();
       var div = $(this);
       div.animate({ left: '-100px' }, "slow");
@@ -97,15 +118,17 @@ $(document).ready(function () {
    /* Callback
    * entendendo ações que começam ao termino de outra
    */
-
-
-
-   // $('.featured-item:nth(2)').hide(500, function () {
-   //    alert($(this).find('h4').text() + ' Esgotado')
-   // })
-   //    .show(500, function () {
-   //       alert($(this).find('h4').text() + ' Em estoque')
-   //    })
+   const tempo = 1000
+   $('#btnCadastrar').on('click', function (e) {
+      e.preventDefault()
+      if ($('#nomeInput').val() == '') {
+         $('#nomeInput').animate({
+            border: '1px solid #f00',
+         }, tempo, function () {
+            console.log($(this).val())
+         })
+      }
+   })
 
    $('.featured-item').hover(function () {
       $(this).css({
@@ -118,6 +141,7 @@ $(document).ready(function () {
          })
       }
    )
+
 })
 
 function comprarItem() {
