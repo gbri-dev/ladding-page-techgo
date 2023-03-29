@@ -4,33 +4,17 @@ $(document).ready(function () {
 
    $('.owl-carousel').owlCarousel();
 
-   // Ouvinte de eventos .nav-model-open
-   $('.nav-modal-open').on('click', function (e) {
-      e.preventDefault();
-
-      let elem = $(this).attr('rel')
-      $('.modal-body').html($('#' + elem).html())
-
-      $('.modal-header h5.modal-title').html($(this).text())
-
-      let myModal = new bootstrap.Modal($('#exampleModalToggle'))
-      myModal.show()
-   })
-
    /* - Checar se o nome é válido (mais de 2 caracteres)
-    * - Checar se o email é válido com ao menos um @ e .
-    * - Checar se o CPF é válido com regex 
-    */
+   * - Checar se o email é válido com ao menos um @ e .
+   * - Checar se o CPF é válido com regex 
+   */
    $('#FormName').on('focusout', function (e) {
       e.preventDefault()
-      // let Campo = $('#FormName').val();
-      // validate(Campo)
       let valorNome = $("#FormName").val()
       if (valorNome == " " || valorNome.length <= 2) {
          $(this).addClass('erroModal')
       }
       else {
-         // elem.parent().find('.text-muted').hide()
          $(this).removeClass('erroModal')
       }
    })
@@ -43,8 +27,7 @@ $(document).ready(function () {
       if (this.value.match(cpfValido)) {
          $(this).removeClass('erroModal')
       }
-      else {
-         // elem.parent().find('.text-muted').hide()
+      else { 
          $(this).addClass('erroModal')
       }
    })

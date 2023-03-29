@@ -98,6 +98,7 @@ a {
 	font-weight: 700;
 	color: #614391;
 	transition: all 0.5s;
+	cursor: pointer;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover,
@@ -889,4 +890,10 @@ a {
 		text-align: left;
 	}
 
+}
+
+.erroModal {
+	color: red;
+	border: 1px solid red;
+	font-weight: 600;
 }
