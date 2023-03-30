@@ -62,13 +62,16 @@
         <div class="w50 contato-form">
           <form>
             <h1 id="entrarEmContato">Contate-nos</h1>
-            <input placeholder="João Batista..." type="text" name="nome" id="nome">
-            <input placeholder="email@example.com" type="email" name="email" id="email">
+            <small id="helpNome" class="text-muted">Nome inválido, digite mais de 3
+              caracteres!</small>
+            <input placeholder="João Batista..." type="text" name="nome" id="nome" aria-describedby="helpNome">
+            <small id="helpEmail" class="text-muted">email inválido, precisa conter @ e .com!</small>
+            <input placeholder="email@example.com" type="email" name="email" id="email" aria-describedby="helpEmail">
+            <small id="helpTell" class="text-muted">Digite um número válido!</small>
             <input placeholder="DDD+ 9 ..." type="text" name="phone_with_ddd" id="phone_with_ddd"
               aria-describedby="helpTell">
-            <small id="helpTell" class="text-muted">Digite um número válido!</small>
-            <input placeholder="00000-000" type="text" name="CEP" id="cep" aria-describedby="helpCEP">
             <small id="helpCEP" class="text-muted">CEP inválido!</small>
+            <input placeholder="00000-000 / CEP" type="text" name="CEP" id="cep" aria-describedby="helpCEP">
             <select name="" id="">
               <option value="">Geral</option>
               <option value="">Suporte</option>

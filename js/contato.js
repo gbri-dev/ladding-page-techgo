@@ -55,10 +55,12 @@ $(document).ready(function () {
     const emailValido = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?/i;
 
     if (this.value.match(emailValido)) {
-      $(this).removeClass('erroModal')      
+      $(this).removeClass('erroModal')
+      $('#helpEmail').css({ 'display': 'none', 'color': 'red' })
     }
     else {
-      $(this).addClass('erroModal')    
+      $(this).addClass('erroModal')
+      $('#helpEmail').css({ 'display': 'block', 'color': 'red' })
     }
   })
 
@@ -67,10 +69,37 @@ $(document).ready(function () {
     let valorNome = $("#nome").val()
     if (valorNome == " " || valorNome.length <= 2) {
       $(this).addClass('erroModal')
+      $('#helpNome').css({ 'display': 'block', 'color': 'red' })
     }
     else {
       $(this).removeClass('erroModal')
+      $('#helpNome').css({ 'display': 'none', 'color': 'red' })
     }
   })
-
+  //phone_with_ddd
+  $('#phone_with_ddd').on('focusout', function (e) {
+    e.preventDefault()
+    let valorTell = $("#phone_with_ddd").val()
+    if (valorTell == " " || valorTell.length < 11) {
+      $(this).addClass('erroModal')
+      $('#helpTell').css({ 'display': 'block', 'color': 'red' })
+    }
+    else {
+      $(this).removeClass('erroModal')
+      $('#helpTell').css({ 'display': 'none', 'color': 'red' })
+    }
+  })
+  //CEP
+  $('#cep').on('focusout', function (e) {
+    e.preventDefault()
+    let valorCEP = $("#cep").val()
+    if (valorCEP == " " || valorCEP.length < 8) {
+      $(this).addClass('erroModal')
+      $('#helpCEP').css({ 'display': 'block', 'color': 'red' })
+    }
+    else {
+      $(this).removeClass('erroModal')
+      $('#helpCEP').css({ 'display': 'none', 'color': 'red' })
+    }
+  })
 })
