@@ -893,8 +893,8 @@ a {
 }
 
 .text-muted {
-  display: none;
-  color: red;
+	display: none;
+	color: red;
 }
 
 .erroModal {

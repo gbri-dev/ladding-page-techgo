@@ -8,6 +8,7 @@ main {
   padding-top: 60px;
   padding-left: 40px;
   padding-bottom: 45px;
+  overflow: hidden;
 }
 
 .contato-form {
@@ -44,7 +45,7 @@ textarea {
 .mapa-container {
   width: 100%;
   padding-top: 7%;
-  position: relative;
+  position: static;
 }
 
 .text-muted {
@@ -55,4 +56,24 @@ textarea {
 .invalid {
   color: red;
   border: solid 1px #971010;
+}
+
+@media (max-width: 600px) {
+  .framerMapa {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mapa-container {
+    padding: 0;
+    margin: 0;
+    position: static;
+  }
+
+  main {
+    padding: 0;
+    overflow: hidden;
+  }
 }
