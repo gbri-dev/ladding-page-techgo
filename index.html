@@ -308,7 +308,10 @@
                         <form class="form px-4 py-3">
                             <div class="mb-3">
                                 <label for="FormName" class="form-label">Primeiro Nome</label>
-                                <input type="text" class="form-control" name="nome" id="FormName" placeholder="Nome">
+                                <input type="text" class="form-control" name="nome" id="FormName" placeholder="Nome"
+                                    aria-describedby="helpNome">
+                                <small id="helpNome" class="text-muted">Nome inválido, digite mais de 3
+                                    caracteres!</small>
                             </div>
                             <div class="mb-3">
                                 <label for="FormEmail1" class="form-label">Email
@@ -318,8 +321,9 @@
                             </div>
                             <div class="mb-3">
                                 <label for="FormCPF" class="form-label">CPF</label>
-                                <input type="text" class="form-control" id="FormCPF" name="nome"
-                                    placeholder="111.111.111-11">
+                                <input type="text" class="form-control" id="FormCPF" name="FormCPF"
+                                    placeholder="111.111.111-11" aria-describedby="helpCPF">
+                                <small id="helpCPF" class="text-muted">CPF inválido!</small>
                             </div>
                             <button type="submit" class="btn btn-lg btn-outline-primary">Enviar</button>
                         </form>

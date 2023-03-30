@@ -55,10 +55,10 @@ $(document).ready(function () {
     const emailValido = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?/i;
 
     if (this.value.match(emailValido)) {
-      $(this).removeClass('erroModal')
+      $(this).removeClass('erroModal')      
     }
     else {
-      $(this).addClass('erroModal')
+      $(this).addClass('erroModal')    
     }
   })
 

@@ -7,7 +7,7 @@ $(document).ready(function () {
    //jqueryMask 
    $('.date').mask('00/00/0000');
    $('.phone_with_ddd').mask('(00) 0 000-00000');
-   $('.cpf').mask('000.000.000-00', { reverse: true });
+   $('#FormCPF').mask('000.000.000-00', { reverse: true });
    $('.money').mask('000.000.000.000.000,00', { reverse: true });
    $('.placeholder').mask("00/00/0000", { placeholder: "__/__/____" });
 
@@ -16,19 +16,20 @@ $(document).ready(function () {
    * - Checar se o email é válido com ao menos um @ e .
    * - Checar se o CPF é válido com regex 
    */
+   $('#FormName').on('focusout', function (e) {
+      e.preventDefault()
+      let valorNome = $("#FormName").val()
+      if (valorNome == " " || valorNome.length <= 2) {
+         $(this).addClass('erroModal')
+         $('#helpNome').css({ 'display': 'block', 'color': 'red' })
+      }
+      else {
+         $(this).removeClass('erroModal')
+         $('#helpNome').css({ 'display': 'none', 'color': 'red' })
+      }
+   })
 
-   // $('#FormName').on('focusout', function (e) {
-   //    e.preventDefault()
-   //    let valorNome = $("#FormName").val()
-   //    if (valorNome == " " || valorNome.length <= 2) {
-   //       $(this).addClass('erroModal')
-   //    }
-   //    else {
-   //       $(this).removeClass('erroModal')
-   //    }
-   // })
-
-   //Válida CPF e CNPJ expressão regex: ([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})
+   // Válida CPF e CNPJ expressão regex: ([0 - 9]{ 2 } [\.] ? [0 - 9]{ 3 } [\.] ? [0 - 9]{ 3 } [\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})
    // event focusout ou blur
    $('#FormCPF').on('blur', function (e) {
       e.preventDefault()
@@ -36,9 +37,11 @@ $(document).ready(function () {
 
       if (this.value.match(cpfValido)) {
          $(this).removeClass('erroModal')
+         $('#helpCPF').css({ 'display': 'none', 'color': 'red' })
       }
       else {
          $(this).addClass('erroModal')
+         $('#helpCPF').css({ 'display': 'block', 'color': 'red' })
       }
    })
 
@@ -61,22 +64,23 @@ $(document).ready(function () {
    })
 
    /*          FIM  */
-   function validaInput(elem) {
-      if ($(elem).val() == "" || elem.length <= 2) {
+   // function validaInput(elem) {
+   //    if ($(elem).val() == "" || elem.length <= 2) {
 
-         console.log('o campo de ' + $(elem).attr('name') + ' é obrigatório')
+   //       console.log('o campo de ' + $(elem).attr('name') + ' é obrigatório')
 
-         $(elem).addClass('erroModal')
-         return false
-      }
-      else {
-         $(elem).removeClass('erroModal')
-      }
-   }
+   //       $(elem).addClass('erroModal')
+   //       return false
+   //    }
+   //    else {
+   //       $(elem).removeClass('erroModal')
+   //    }
+   // }
 
-   $('#FormName').on('blur', function (e) {
-      validaInput(this)
-   })
+   // $('#FormName').on('blur', function (e) {
+   //    e.preventDefault()
+   //    validaInput(this)
+   // })
    /*
       função recursiva 
    */
