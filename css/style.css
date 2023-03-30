@@ -892,6 +892,11 @@ a {
 
 }
 
+.text-muted {
+  display: none;
+  color: red;
+}
+
 .erroModal {
 	color: red;
 	border: 1px solid red;
