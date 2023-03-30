@@ -1,7 +1,28 @@
 // instancia jquery e evita conflitos
 // jQuery( function($){
 $(document).ready(function () {
+   //Menu
+   $(".nav-item").on('mouseenter', function (event) {
+      event.preventDefault();
+      $(this).animate({
+         left: '250px',
+         right: '-250px',
+         opacity: '0.5',
+         height: '150px',
+         width: '150px'
+      });
+   });
+   $(".nav-item").on('mouseleave', function (event) {
+      event.preventDefault();
+      $(this).animate({
+         left: '-250px',
+         right: '250px',
+         opacity: '100',
+         width: '100px'
+      });
+   });
 
+   //Produtos
    $('.owl-carousel').owlCarousel();
 
    //jqueryMask 
@@ -27,7 +48,7 @@ $(document).ready(function () {
          $(this).removeClass('erroModal')
          $('#helpNome').css({ 'display': 'none', 'color': 'red' })
       }
-   })
+   });
 
    // Válida CPF e CNPJ expressão regex: ([0 - 9]{ 2 } [\.] ? [0 - 9]{ 3 } [\.] ? [0 - 9]{ 3 } [\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})
    // event focusout ou blur
@@ -43,7 +64,7 @@ $(document).ready(function () {
          $(this).addClass('erroModal')
          $('#helpCPF').css({ 'display': 'block', 'color': 'red' })
       }
-   })
+   });
 
    //não submeter o formulário caso tenha a class erroModal
    //caso dinamicamente adicione depois do 'submit': '.modal-body .form-contato',
@@ -57,11 +78,10 @@ $(document).ready(function () {
          console.log("verificar campos obrigatórios!")
          return false
       } else {
-         // $(this).submit()
+         $(this).submit()
          return true
       }
-
-   })
+   });
 
    /*          FIM  */
    // function validaInput(elem) {
@@ -85,7 +105,7 @@ $(document).ready(function () {
       função recursiva 
    */
 
-   $('.featured-item h4').append('<span class="badge bg-secondary">Novo</span>')
+   $('.featured-item h4').append('<span class="badge bg-secondary">Novo</span>');
 
 
    $('.featured-item h4').dblclick(function () {
@@ -101,40 +121,22 @@ $(document).ready(function () {
    $('.featured-item a').on('blur', function (event) {
       event.preventDefault(); //vai tirar o comportamento padrão do link 'a'
       $(this).addClass('btn btn-dark stretch-link');
-   })
+   });
 
    $(".cadastro #btnCadastrar").on('mouseenter', function (event) {
       event.preventDefault();
       var div = $(this);
       div.animate({ left: '100px' }, "fast");
       div.animate({ fontSize: '3em' }, "fast");
-   })
+   });
    $(".cadastro #btnCadastrar").on('mouseleave', function (event) {
       event.preventDefault();
       var div = $(this);
       div.animate({ left: '-100px' }, "slow");
       div.animate({ fontSize: '1em' }, "slow");
-   })
+   });
 
-   $(".nav-item").on('mouseenter', function (event) {
-      event.preventDefault();
-      $(this).animate({
-         left: '250px',
-         right: '-250px',
-         opacity: '0.5',
-         height: '150px',
-         width: '150px'
-      });
-   });
-   $(".nav-item").on('mouseleave', function (event) {
-      event.preventDefault();
-      $(this).animate({
-         left: '-250px',
-         right: '250px',
-         opacity: '100',
-         width: '100px'
-      });
-   });
+
    /*
     * Manipulação de eventos
     * blur é quando você tirar um elemento do foco  
@@ -161,7 +163,7 @@ $(document).ready(function () {
             console.log($(this).val())
          })
       }
-   })
+   });
 
    $('.featured-item').hover(function () {
       $(this).css({
@@ -173,15 +175,5 @@ $(document).ready(function () {
             'filter': 'none',
          })
       }
-   )
-
-})
-
-function comprarItem() {
-   $('.featured-item:nth(2)').hide(500, function () {
-      alert($(this).find('h4').text() + ' Esgotado')
-   })
-      .show(500, function () {
-         alert($(this).find('h4').text() + ' Em estoque')
-      })
-}
+   );
+});
