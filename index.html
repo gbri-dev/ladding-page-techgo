@@ -403,6 +403,16 @@
     <script src="./vendor/jquery-ui/jquery-ui.js"></script>
     <script src="./js/custom.js"></script>
     <script src="./js/efeitosJUI.js"></script>
+    <script>
+        document.getElementById("btnCadastrar").addEventListener("click", function (event) {
+            event.preventDefault()
+            let nome = document.getElementById("nomeInput").value;
+            let email = document.getElementById("emailInput").value;
+            let mensagemWhatsapp = `Olá! Meu nome é ${nome}, email para cadastro ${email}`;
+            let linkWhatsapp = `https://wa.me/27999877446?${encodeURIComponent(mensagemWhatsapp)}`;
+            window.open(linkWhatsapp);
+        })
+    </script>
 
 </body>
 
